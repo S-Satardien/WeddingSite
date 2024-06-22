@@ -1,12 +1,14 @@
 document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value;
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
     const attendance = document.getElementById('attendance').value;
 
     const data = {
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         attendance: attendance
     };
@@ -39,4 +41,5 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         console.error('There was a problem with your fetch operation:', error);
     });
 });
+
 
