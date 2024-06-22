@@ -26,13 +26,18 @@
                 <label for="lastname">Last Name:</label>
                 <input type="text" id="lastname" name="lastname" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
                 <label for="attendance">Will you be attending?</label>
                 <select id="attendance" name="attendance" required>
                     <option value="yes">Yes, of course, I'm there</option>
                     <option value="no">Sorry, can't make it</option>
+                </select>
+
+                <label for="dietary">Dietary Requirements:</label>
+                <select id="dietary" name="dietary" required>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="dairy-free">Dairy-free</option>
+                    <option value="gluten-free">Gluten-free</option>
                 </select>
 
                 <button type="submit">Submit</button>
