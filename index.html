@@ -4,52 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saleem & Rabia's Wedding</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Saleem & Rabia's Wedding</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Saleem & Rabia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#story">Our Story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rsvp">RSVP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#quotes">Quotes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="header-section text-white text-center py-5">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Saleem & Rabia's Wedding</h1>
+            <p class="lead animate__animated animate__fadeInUp">Join us on our special day!</p>
+        </div>
     </header>
 
-    <main>
-        <section class="intro">
-            <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="couple-photo">
-            <p>Welcome to our wedding website! We are thrilled to celebrate our special day with you.</p>
+    <main class="container my-5">
+        <section id="story" class="intro text-center mb-5">
+            <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle mb-3 animate__animated animate__zoomIn" style="width: 200px;">
+            <p class="lead">Welcome to our wedding website! We are thrilled to celebrate our special day with you.</p>
         </section>
 
-        <section class="rsvp">
-            <h2>RSVP</h2>
-            <form id="rsvp-form">
-                <label for="firstname">First Name:</label>
-                <input type="text" id="firstname" name="firstname" required>
-
-                <label for="lastname">Last Name:</label>
-                <input type="text" id="lastname" name="lastname" required>
-
-                <label for="attendance">Will you be attending?</label>
-                <select id="attendance" name="attendance" required>
-                    <option value="yes">Yes, of course, I'm there</option>
-                    <option value="no">Sorry, can't make it</option>
-                </select>
-
-                <label for="dietary">Dietary Requirements:</label>
-                <select id="dietary" name="dietary" required>
-                    <option value="none">None</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="dairy-free">Dairy-free</option>
-                    <option value="gluten-free">Gluten-free</option>
-                </select>
-
-                <button type="submit">Submit</button>
+        <section id="rsvp" class="rsvp mb-5">
+            <h2 class="text-center mb-4">RSVP</h2>
+            <form id="rsvp-form" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required>
+                        <div class="invalid-feedback">Please provide a first name.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                        <div class="invalid-feedback">Please provide a last name.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Will you be attending?</label>
+                    <select class="form-control" id="attendance" name="attendance" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="yes">Yes, of course, I'm there</option>
+                        <option value="no">Sorry, can't make it</option>
+                    </select>
+                    <div class="invalid-feedback">Please select an attendance option.</div>
+                </div>
+                <div class="form-group">
+                    <label for="dietary">Dietary Requirements</label>
+                    <select class="form-control" id="dietary" name="dietary" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="dairy-free">Dairy-free</option>
+                        <option value="gluten-free">Gluten-free</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a dietary requirement.</div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Submit</button>
             </form>
+        </section>
+
+        <section id="quotes" class="quotes text-center mb-5">
+            <h2 class="text-center mb-4">Quotes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
+                        <footer class="blockquote-footer">Saleem</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle animate__animated animate__zoomIn" style="width: 200px;">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
+                        <footer class="blockquote-footer">Rabia</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact text-center mb-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="lead">If you have any questions, feel free to reach out to us!</p>
+            <p>Email: <a href="mailto:courtneyjames3009@gmail.com">courtneyjames3009@gmail.com</a></p>
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-light text-center py-3">
         <p>&copy; 2024 Saleem & Rabia. All rights reserved.</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
