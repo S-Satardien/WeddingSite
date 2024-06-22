@@ -1,16 +1,16 @@
 document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
-    const email = document.getElementById('email').value;
+    const firstName = document.getElementById('firstname').value;
+    const lastName = document.getElementById('lastname').value;
     const attendance = document.getElementById('attendance').value;
+    const dietary = document.getElementById('dietary').value;
 
     const data = {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        attendance: attendance
+        firstName: firstName,
+        lastName: lastName,
+        attendance: attendance,
+        dietary: dietary
     };
 
     console.log("Data being sent:", data); // Log data for debugging
