@@ -7,8 +7,8 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     const attendance = document.getElementById('attendance').value;
 
     const data = {
-        firstname: firstName,
-        lastname: lastName,
+        firstname: firstname,
+        lastname: lastname,
         email: email,
         attendance: attendance
     };
