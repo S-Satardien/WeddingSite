@@ -13,6 +13,7 @@ exports.handler = async (event, context) => {
   }
 
   const data = JSON.parse(event.body);
+  console.log("Data received by Netlify function:", data); // Log data for debugging
 
   const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec';
 
@@ -34,6 +35,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(responseData),
     };
   } catch (error) {
+    console.error('Error in Netlify function:', error);
     return {
       statusCode: 500,
       headers: {
@@ -43,5 +45,3 @@ exports.handler = async (event, context) => {
     };
   }
 };
-
-
