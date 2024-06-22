@@ -42,4 +42,3 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     });
 });
 
-
