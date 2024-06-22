@@ -11,15 +11,27 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         attendance: attendance
     };
 
-    fetch('https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec', {
+    // Check if running locally or on a production server
+    const isLocal = window.location.hostname === 'localhost';
+    const proxyUrl = isLocal ? 'http://localhost:8080/' : '';
+    const targetUrl = 'https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec';
+
+    fetch(proxyUrl + targetUrl, {
         method: 'POST',
+        mode: 'cors',
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
+        console.log(data); // Log the response data
         if (data.result === 'success') {
             alert('RSVP submitted successfully!');
         } else {
@@ -27,6 +39,7 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('There was a problem with your fetch operation:', error);
     });
 });
+
