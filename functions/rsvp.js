@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
   const data = JSON.parse(event.body);
   console.log("Data received by Netlify function:", data); // Log data for debugging
 
-  const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbyTgoNELEKndjLW28Md6gucMHF1Nyh3wMn4FmaHoIUbZkUhoDFpMBbq_xjb7uLb_CUFgg/exec';
+  const googleScriptUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
 
   try {
     const response = await fetch(googleScriptUrl, {
@@ -47,4 +47,3 @@ exports.handler = async (event, context) => {
     };
   }
 };
-
