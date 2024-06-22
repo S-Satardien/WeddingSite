@@ -31,6 +31,31 @@ footer p {
 .rsvp form {
     max-width: 600px;
     margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.rsvp form::before, .rsvp form::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('path/to/flower.png'); /* Replace with the path to your flower image */
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.rsvp form::before {
+    top: -25px;
+    left: -25px;
+}
+
+.rsvp form::after {
+    bottom: -25px;
+    right: -25px;
 }
 
 .btn-primary {
@@ -61,4 +86,34 @@ blockquote {
 
 blockquote footer {
     color: #ff7e5f;
+}
+
+.quotes img {
+    border: 5px solid #ff7e5f;
+    padding: 5px;
+}
+
+.quotes .row {
+    position: relative;
+}
+
+.quotes .row::before, .quotes .row::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('path/to/flower-drape.png'); /* Replace with the path to your flower drape image */
+    background-size: cover;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.quotes .row::before {
+    top: -50px;
+    left: -50px;
+}
+
+.quotes .row::after {
+    bottom: -50px;
+    right: -50px;
 }
