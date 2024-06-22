@@ -11,10 +11,9 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         attendance: attendance
     };
 
-    const proxyUrl = window.location.hostname === 'localhost' ? 'http://localhost:8080/' : '';
-    const targetUrl = 'https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec';
+    const targetUrl = '/.netlify/functions/rsvp';
 
-    fetch(proxyUrl + targetUrl, {
+    fetch(targetUrl, {
         method: 'POST',
         mode: 'cors',
         body: JSON.stringify(data),
