@@ -13,6 +13,8 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         attendance: attendance
     };
 
+    console.log("Data being sent:", data); // Log data for debugging
+
     const targetUrl = '/.netlify/functions/rsvp';
 
     fetch(targetUrl, {
@@ -41,3 +43,4 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
         console.error('There was a problem with your fetch operation:', error);
     });
 });
+
