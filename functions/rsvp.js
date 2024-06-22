@@ -12,11 +12,11 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const data = JSON.parse(event.body);
-
-  const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec';
-
   try {
+    const data = JSON.parse(event.body);
+
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbynXh2W6ZRGnW0jnjK_etUEbi-0l0DTaNuFunAK_RsfSn9UmNxCvjnVPuKg_nZ18Gxf/exec';
+
     const response = await fetch(googleScriptUrl, {
       method: 'POST',
       headers: {
@@ -24,6 +24,7 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify(data),
     });
+
     const responseData = await response.json();
 
     return {
@@ -39,9 +40,8 @@ exports.handler = async (event, context) => {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ error: 'Failed to fetch from Google Apps Script' }),
+      body: JSON.stringify({ error: 'Failed to fetch from Google Apps Script: ' + error.message }),
     };
   }
 };
-
 
