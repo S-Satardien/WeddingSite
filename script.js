@@ -64,3 +64,49 @@
     }, false);
 })();
 
+document.addEventListener('DOMContentLoaded', function () {
+    let bannersMoved = false;
+    let initialLoad = true;
+
+    function preventScroll(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    }
+
+    function allowScroll() {
+        document.body.style.overflow = 'auto';
+    }
+
+    function preventScrolling() {
+        document.body.style.overflow = 'hidden';
+    }
+
+    window.addEventListener('scroll', function (e) {
+        if (initialLoad) {
+            e.preventDefault();
+
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition < 200) {
+                preventScrolling();
+                // Move banners apart and maintain full opacity
+                var bannerWidth = Math.max(50 - scrollPosition / 4, 0) + 'vw'; // Adjust this to control how much the banners move apart
+                document.body.style.setProperty('--banner-width', bannerWidth);
+                document.body.style.setProperty('--banner-opacity', '1');
+            } else {
+                // Fix banners to the sides and set opacity to 0.8
+                document.body.style.setProperty('--banner-width', '200px');
+                document.body.style.setProperty('--banner-opacity', '0.8');
+                document.body.style.setProperty('--banner-zindex', '1'); // Lower the z-index to stay behind the footer
+                bannersMoved = true;
+                initialLoad = false; // Ensure banners stay fixed after the first scroll
+                allowScroll();
+                window.scrollTo(0, 0); // Reset scroll position
+            }
+        }
+    });
+});
+
+
+
