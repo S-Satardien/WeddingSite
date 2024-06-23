@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
+<div class="vertical-banner-right"></div>
 <nav class="navbar navbar-expand-lg fixed-top">
     <a class="navbar-brand" href="#">Saleem & Rabia</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,13 +41,7 @@
     </div>
 </nav>
 
-
-
-
-
-
-
-    <header>
+<header class="main-content">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -72,104 +63,103 @@
     </div>
 </header>
 
+<main class="main-content container my-5">
+    <section id="story" class="intro text-center mb-5">
+        <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle mb-3 animate__animated animate__zoomIn" style="width: 200px;">
+        <p class="lead">Welcome to our wedding website! We are thrilled to celebrate our special day with you.</p>
+    </section>
 
-    <main class="container my-5">
-        <section id="story" class="intro text-center mb-5">
-            <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle mb-3 animate__animated animate__zoomIn" style="width: 200px;">
-            <p class="lead">Welcome to our wedding website! We are thrilled to celebrate our special day with you.</p>
-        </section>
+    <section id="rsvp" class="rsvp mb-5">
+        <h2 class="text-center mb-4">RSVP</h2>
+        <div class="form-container">
+            <form id="rsvp-form" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required>
+                        <div class="invalid-feedback">Please provide a first name.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                        <div class="invalid-feedback">Please provide a last name.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Will you be attending?</label>
+                    <select class="form-control" id="attendance" name="attendance" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="yes">Yes, of course, I'm there</option>
+                        <option value="no">Sorry, can't make it</option>
+                    </select>
+                    <div class="invalid-feedback">Please select an attendance option.</div>
+                </div>
+                <div class="form-group">
+                    <label for="dietary">Dietary Requirements</label>
+                    <select class="form-control" id="dietary" name="dietary" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="dairy-free">Dairy-free</option>
+                        <option value="gluten-free">Gluten-free</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a dietary requirement.</div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
 
-       <section id="rsvp" class="rsvp mb-5">
-    <h2 class="text-center mb-4">RSVP</h2>
-    <div class="form-container">
-        <form id="rsvp-form" class="needs-validation" novalidate>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="firstname">First Name</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" required>
-                    <div class="invalid-feedback">Please provide a first name.</div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" required>
-                    <div class="invalid-feedback">Please provide a last name.</div>
-                </div>
+    <section id="quotes" class="quotes text-center mb-5">
+        <h2 class="text-center mb-4">Quotes</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
+                    <footer class="blockquote-footer">Saleem</footer>
+                </blockquote>
             </div>
-            <div class="form-group">
-                <label for="attendance">Will you be attending?</label>
-                <select class="form-control" id="attendance" name="attendance" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="yes">Yes, of course, I'm there</option>
-                    <option value="no">Sorry, can't make it</option>
-                </select>
-                <div class="invalid-feedback">Please select an attendance option.</div>
+            <div class="col-md-4 mb-4">
+                <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle animate__animated animate__zoomIn" style="width: 200px;">
             </div>
-            <div class="form-group">
-                <label for="dietary">Dietary Requirements</label>
-                <select class="form-control" id="dietary" name="dietary" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="none">None</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="dairy-free">Dairy-free</option>
-                    <option value="gluten-free">Gluten-free</option>
-                </select>
-                <div class="invalid-feedback">Please select a dietary requirement.</div>
+            <div class="col-md-4 mb-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
+                    <footer class="blockquote-footer">Rabia</footer>
+                </blockquote>
             </div>
-            <button class="btn btn-primary btn-block" type="submit">Submit</button>
-        </form>
-    </div>
-</section>
+        </div>
+    </section>
 
-
-
-        <section id="quotes" class="quotes text-center mb-5">
-            <h2 class="text-center mb-4">Quotes</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
-                        <footer class="blockquote-footer">Saleem</footer>
-                    </blockquote>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle animate__animated animate__zoomIn" style="width: 200px;">
-                </div>
-                <div class="col-md-4 mb-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
-                        <footer class="blockquote-footer">Rabia</footer>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact text-center mb-5">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <p class="lead">If you have any questions, feel free to reach out to us!</p>
-            <p>Email: <a href="mailto:courtneyjames3009@gmail.com">courtneyjames3009@gmail.com</a></p>
-        </section>
-		
-		<!-- New Directions Section -->
-		<section id="directions">
-			<h2>Directions to the Venue</h2>
-			<div class="map-container">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d52932.05008083607!2d18.415058639472726!3d-33.98603138429793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-33.9810134!2d18.4869558!4m5!1s0x1dcc42a1c6bbe8ed%3A0x39b009ef49e24770!2ssouthern%20lights%20country%20house%20google%20maps!3m2!1d-33.999601!2d18.431393!5e0!3m2!1sen!2sza!4v1719137273672!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
-		</section>
-
-    </main>
-
-    <footer>
+    <section id="contact" class="contact text-center mb-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="lead">If you have any questions, feel free to reach out to us!</p>
+        <p>Email: <a href="mailto:courtneyjames3009@gmail.com">courtneyjames3009@gmail.com</a></p>
+    </section>
+	
+    <!-- New Directions Section -->
+    <section id="directions">
+        <h2>Directions to the Venue</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d52932.05008083607!2d18.415058639472726!3d-33.98603138429793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-33.9810134!2d18.4869558!4m5!1s0x1dcc42a1c6bbe8ed%3A0x39b009ef49e24770!2ssouthern%20lights%20country%20house%20google%20maps!3m2!1d-33.999601!2d18.431393!5e0!3m2!1sen!2sza!4v1719137273672!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+	
+	
+</main>
+</body>
+<footer class="footer">
     <p>&copy; 2024 Saleem & Rabia. All rights reserved.</p>
 </footer>
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -199,11 +189,3 @@
 
 
 </html>
-
-
-
-
-
-</html>
-
-
