@@ -16,6 +16,10 @@ body {
     background-color: #e6f0e6; /* Soft pastel green */
     color: #2f4f4f; /* Dark green text */
     font-family: 'Georgia', serif;
+    margin: 0 200px; /* Adjust margin to match the width of the vertical banner */
+    padding-top: 80px; /* Adjust the padding value as needed */
+	
+
 }
 
 /* Header slider styling */
@@ -25,11 +29,35 @@ header {
     height: 60vh; /* Adjust height as needed */
 }
 
+/* Slider container */
 .swiper-container {
     width: 100%;
     height: 100%;
+    position: relative; /* Ensure relative positioning for pseudo-elements */
 }
 
+/* Slider container with gradient fade on the sides */
+.swiper-container::before,
+.swiper-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust width as needed */
+    z-index: 9; /* Ensure they are above the slider images */
+}
+
+.swiper-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(230, 240, 230, 1), rgba(230, 240, 230, 0));
+}
+
+.swiper-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(230, 240, 230, 1), rgba(230, 240, 230, 0));
+}
+
+/* Slider slides */
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -56,15 +84,16 @@ header {
     object-fit: cover;
 }
 
+/* Ensure swiper navigation buttons are above the gradient */
 .swiper-button-next,
 .swiper-button-prev {
     color: #2f4f4f; /* Adjust color to match your theme */
+    z-index: 20; /* Ensure navigation buttons are above the gradient */
 }
 
 .swiper-pagination-bullet {
     background: #2f4f4f; /* Adjust color to match your theme */
 }
-
 
 
 /* Footer styling */
@@ -79,6 +108,7 @@ footer {
     text-align: center;
     color: #2f4f4f; /* Dark green text */
     font-family: 'Georgia', serif;
+	z-index: 3;
 }
 
 footer p {
@@ -86,7 +116,6 @@ footer p {
     color: #2f4f4f; /* Dark green text */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
-
 
 .main-container {
     padding: 20px;
@@ -186,8 +215,6 @@ body {
     padding-top: 80px; /* Adjust the padding value as needed */
 }
 
-
-
 blockquote {
     border-left: 5px solid #2f4f4f;
     padding-left: 15px;
@@ -247,4 +274,104 @@ blockquote footer {
 
 #directions h2 {
     margin-bottom: 20px;
+}
+/* Ensure the body content does not overlap with the vertical drape */
+body {
+    margin: 0;
+    padding-top: 80px;
+    background-color: #e6f0e6; /* Fallback background color */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Required for pseudo-element positioning */
+    --banner-width: 50vw;
+    --banner-opacity: 1;
+    --banner-zindex: 100; /* Custom property for z-index */
+}
+
+/* Background pattern with opacity */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/floral-pattern.png') repeat; /* Add background image and make it repeat */
+    opacity: 0.1; /* Adjust opacity for subtle effect */
+    z-index: 0; /* Ensure it's behind all other content */
+}
+
+/* Left vertical banner */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--banner-width); /* Use custom property for width */
+    height: 100%;
+    background: linear-gradient(to left, #e6f0e6, rgba(230, 240, 230, 0)), url('images/vertical-banner-left.png');
+    background-size: cover, cover;
+    background-blend-mode: normal;
+    background-position: top left, top left;
+    z-index: var(--banner-zindex); /* Ensure banners are in front initially */
+    background-color: #e6f0e6;
+    opacity: var(--banner-opacity); /* Use custom property for opacity */
+    transition: width 0.5s ease, opacity 0.5s ease, z-index 0.5s ease; /* Smooth transition for width, opacity, and z-index change */
+}
+
+/* Right vertical banner */
+.vertical-banner-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--banner-width); /* Use custom property for width */
+    height: 100%;
+    background: linear-gradient(to right, #e6f0e6, rgba(230, 240, 230, 0)), url('images/vertical-banner-right.png');
+    background-size: cover, cover;
+    background-blend-mode: normal;
+    background-position: top right, top right;
+    z-index: var(--banner-zindex); /* Ensure banners are in front initially */
+    background-color: #e6f0e6;
+    opacity: var(--banner-opacity); /* Use custom property for opacity */
+    transition: width 0.5s ease, opacity 0.5s ease, z-index 0.5s ease; /* Smooth transition for width, opacity, and z-index change */
+}
+
+/* Content that should be behind the banners initially */
+.main-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above banners */
+    margin-top: 80px; /* Ensure content starts below the navbar */
+    margin-bottom: 100px; /* Ensure content ends above the footer */
+}
+
+/* Header slider styling */
+header .swiper-container {
+    z-index: 2; /* Ensure dynamic slider is above banners */
+    position: relative;
+    width: calc(100% - 400px); /* Adjust width to avoid overlap with banners */
+    margin: 0 auto; /* Center the slider */
+    height: 60vh; /* Set a fixed height for the slider */
+}
+
+/* Ensure swiper navigation buttons are not overlapped */
+.swiper-button-next,
+.swiper-button-prev {
+    z-index: 3; /* Ensure buttons are above banners */
+}
+
+/* Additional styles to ensure proper layout */
+footer {
+    position: relative;
+    z-index: 2; /* Ensure footer is above banners */
+    background: url('images/navbar-banner.png') repeat; /* Floral banner background for the footer */
+    background-size: cover;
+    padding: 20px 0; /* Add some padding for better spacing */
+    text-align: center;
+    color: #2f4f4f; /* Dark green text */
+    font-family: 'Georgia', serif;
+}
+
+footer p {
+    margin: 0;
+    color: #2f4f4f; /* Dark green text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
