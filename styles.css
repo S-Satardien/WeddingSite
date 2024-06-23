@@ -18,24 +18,75 @@ body {
     font-family: 'Georgia', serif;
 }
 
+/* Header slider styling */
 header {
-    background-color: #2f4f4f; /* Dark green */
-    color: white;
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjust height as needed */
 }
 
-header h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+.swiper-container {
+    width: 100%;
+    height: 100%;
 }
 
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #2f4f4f; /* Adjust color to match your theme */
+}
+
+.swiper-pagination-bullet {
+    background: #2f4f4f; /* Adjust color to match your theme */
+}
+
+
+
+/* Footer styling */
 footer {
-    background-color: #2f4f4f; /* Dark green */
-    color: white;
+    background: rgba(255, 255, 255, 0.5); /* Less transparent background */
+    border-top: 2px solid #2f4f4f; /* Dark green border */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url('images/navbar-banner.png'); /* Floral banner background */
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding: 20px 0; /* Add some padding for better spacing */
+    text-align: center;
+    color: #2f4f4f; /* Dark green text */
+    font-family: 'Georgia', serif;
 }
 
 footer p {
     margin: 0;
+    color: #2f4f4f; /* Dark green text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
+
 
 .main-container {
     padding: 20px;
@@ -78,20 +129,64 @@ footer p {
     padding: 10px 20px;
 }
 
-.navbar-light .navbar-brand {
-    color: #2f4f4f;
+/* Navbar styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.5); /* Less transparent background */
+    border-bottom: 2px solid #2f4f4f; /* Dark green border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url('images/navbar-banner.png'); /* Floral banner background */
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+.navbar-brand {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: #2f4f4f; /* Dark green */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: #2f4f4f;
+.navbar-nav .nav-link {
+    color: #2f4f4f; /* Dark green */
     font-family: 'Georgia', serif;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #4f8f8f;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #4f8f8f;
+    transition: width 0.3s;
+    margin-top: 5px;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border-color: #2f4f4f;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Add padding to the top of the main content to avoid being cut off by the navbar */
+body {
+    padding-top: 80px; /* Adjust the padding value as needed */
+}
+
+
 
 blockquote {
     border-left: 5px solid #2f4f4f;
@@ -153,3 +248,4 @@ blockquote footer {
 #directions h2 {
     margin-bottom: 20px;
 }
+
