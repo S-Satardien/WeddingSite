@@ -46,7 +46,11 @@
                         if (data.result === 'success') {
                             alert('RSVP submitted successfully!');
                         } else {
-                            alert('There was an error submitting your RSVP. Please try again.');
+                            if (data.error && data.error.includes("already RSVP'd")) {
+                                alert(data.error);
+                            } else {
+                                alert('There was an error submitting your RSVP. Please try again.');
+                            }
                         }
                     })
                     .catch(error => {
@@ -58,5 +62,6 @@
         });
     }, false);
 })();
+
 
 
