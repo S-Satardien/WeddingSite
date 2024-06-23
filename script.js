@@ -42,11 +42,11 @@
                         return response.json();
                     })
                     .then(data => {
-                        console.log(data); // Log the response data
+                        console.log("Response data:", data); // Log the response data
                         if (data.result === 'success') {
                             alert('RSVP submitted successfully!');
                         } else {
-                            if (data.error && data.error.includes("already RSVP'd")) {
+                            if (data.error && data.error.includes("has already RSVP'd")) {
                                 alert(data.error);
                             } else {
                                 alert('There was an error submitting your RSVP. Please try again.');
@@ -55,6 +55,7 @@
                     })
                     .catch(error => {
                         console.error('There was a problem with your fetch operation:', error);
+                        alert('There was a problem with your fetch operation: ' + error.message);
                     });
                 }
                 form.classList.add('was-validated');
@@ -62,6 +63,7 @@
         });
     }, false);
 })();
+
 
 
 
