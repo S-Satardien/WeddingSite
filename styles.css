@@ -1,11 +1,4 @@
-
-/* New color scheme */
-body {
-    background-color: #E0E5D5; /* Sage green background */
-    color: #333; /* Dark text for readability */
-}
-
-/* Floral pattern */
+/* Floral background pattern */
 body::before {
     content: '';
     position: fixed;
@@ -13,30 +6,21 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('images/floral-pattern.png') repeat; /* Add your floral pattern image */
+    background: url('images/floral-pattern.png') repeat; /* Ensure this path is correct */
     opacity: 0.1; /* Adjust opacity for subtle effect */
     z-index: -1;
 }
 
-/* RSVP card background */
-.rsvp-card {
-    background: url('images/card-background.jpeg') no-repeat center center;
-    background-size: cover;
-}
-
-/* Banner with flowers */
-.banner {
-    background: url('images/banner-image.png') no-repeat center center; /* Placeholder image */
-    background-size: cover;
-    height: 100px; /* Adjust height as needed */
-    width: 100%;
-}
+/* New color scheme inspired by the invitation */
 body {
-    background-color: #f8f9fa;
+    background-color: #e6f0e6; /* Soft pastel green */
+    color: #2f4f4f; /* Dark green text */
+    font-family: 'Georgia', serif;
 }
 
 header {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-color: #2f4f4f; /* Dark green */
+    color: white;
 }
 
 header h1 {
@@ -45,7 +29,7 @@ header h1 {
 }
 
 footer {
-    background-color: #343a40;
+    background-color: #2f4f4f; /* Dark green */
     color: white;
 }
 
@@ -61,68 +45,66 @@ footer p {
     font-size: 1.25rem;
 }
 
-.rsvp form {
-    max-width: 600px;
-    margin: 0 auto;
+.rsvp {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.rsvp form::before, .rsvp form::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-image: url('path/to/flower.png'); /* Replace with the path to your flower image */
-    background-size: cover;
-    opacity: 0.8;
+.rsvp h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #2f4f4f; /* Dark green */
 }
 
-.rsvp form::before {
-    top: -25px;
-    left: -25px;
+.form-container {
+    margin-top: 20px;
 }
 
-.rsvp form::after {
-    bottom: -25px;
-    right: -25px;
+.form-control {
+    border: 1px solid #2f4f4f;
+    border-radius: 5px;
 }
 
 .btn-primary {
-    background-color: #ff7e5f;
-    border-color: #ff7e5f;
+    background-color: #2f4f4f; /* Dark green */
+    border-color: #2f4f4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 .navbar-light .navbar-brand {
-    color: #ff7e5f;
+    color: #2f4f4f;
     font-family: 'Dancing Script', cursive;
     font-size: 1.5rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #343a40;
-    font-family: 'Dancing Script', cursive;
+    color: #2f4f4f;
+    font-family: 'Georgia', serif;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ff7e5f;
+    color: #4f8f8f;
 }
 
 blockquote {
-    border-left: 5px solid #ff7e5f;
+    border-left: 5px solid #2f4f4f;
     padding-left: 15px;
     font-style: italic;
 }
 
 blockquote footer {
-    color: #ff7e5f;
+    color: #2f4f4f;
 }
 
 .quotes img {
-    border: 5px solid #ff7e5f;
+    border: 5px solid #2f4f4f;
     padding: 5px;
 }
 
@@ -150,6 +132,7 @@ blockquote footer {
     bottom: -50px;
     right: -50px;
 }
+
 #directions {
     display: flex;
     flex-direction: column;
@@ -170,4 +153,3 @@ blockquote footer {
 #directions h2 {
     margin-bottom: 20px;
 }
-
