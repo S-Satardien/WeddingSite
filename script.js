@@ -68,12 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let bannersMoved = false;
     let initialLoad = true;
 
-    function preventScroll(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    }
-
     function allowScroll() {
         document.body.style.overflow = 'auto';
     }
@@ -86,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (initialLoad) {
             e.preventDefault();
 
-            var scrollPosition = window.scrollY;
+            const scrollPosition = window.scrollY;
 
             if (scrollPosition < 200) {
                 preventScrolling();
                 // Move banners apart and maintain full opacity
-                var bannerWidth = Math.max(50 - scrollPosition / 4, 0) + 'vw'; // Adjust this to control how much the banners move apart
+                const bannerWidth = Math.max(50 - scrollPosition / 4, 0) + 'vw'; // Adjust this to control how much the banners move apart
                 document.body.style.setProperty('--banner-width', bannerWidth);
                 document.body.style.setProperty('--banner-opacity', '1');
             } else {
@@ -106,6 +100,71 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const panels = document.querySelectorAll('.timeline-panel');
+    
+    panels.forEach(panel => {
+        panel.addEventListener('mouseover', function() {
+            panel.style.transform = 'scale(1.05)';
+            panel.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+        });
+
+        panel.addEventListener('mouseout', function() {
+            panel.style.transform = 'scale(1)';
+            panel.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Set the date we're counting down to
+    const countDownDate = new Date("Dec 15, 2024 15:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const countdownFunction = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the countdown date
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in the respective elements
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the countdown is finished, display a message
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown-timer").innerHTML = "The Wedding is Here!";
+        }
+    }, 1000);
+
+    // Spark effect logic
+    document.querySelectorAll('.time-box').forEach(box => {
+        box.addEventListener('mouseover', function(event) {
+            createSparks(event, box);
+        });
+    });
+
+    function createSparks(event, element) {
+        for (let i = 0; i < 30; i++) {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            spark.style.left = `${event.clientX - element.getBoundingClientRect().left}px`;
+            spark.style.top = `${event.clientY - element.getBoundingClientRect().top}px`;
+            element.querySelector('.spark-container').appendChild(spark);
+            setTimeout(() => spark.remove(), 1000);
+        }
+    }
 });
 
 
