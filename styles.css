@@ -160,13 +160,21 @@ footer p {
 
 /* Navbar styling */
 .navbar {
-    background: rgba(255, 255, 255, 0.5); /* Less transparent background */
+    background: #f8f8f8; /* Off-white background */
     border-bottom: 2px solid #2f4f4f; /* Dark green border */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-image: url('images/navbar-banner.png'); /* Floral banner background */
-    background-size: cover;
-    background-blend-mode: overlay;
     padding: 10px 0; /* Add some padding for better spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it's above all content */
+}
+
+.logo {
+    height: 50px;
 }
 
 .navbar-brand {
@@ -176,11 +184,18 @@ footer p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
 .navbar-nav .nav-link {
     color: #2f4f4f; /* Dark green */
     font-family: 'Georgia', serif;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+    text-decoration: none;
 }
 
 .navbar-nav .nav-link:hover {
@@ -207,7 +222,7 @@ footer p {
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(47, 79, 79, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Add padding to the top of the main content to avoid being cut off by the navbar */
@@ -275,12 +290,16 @@ blockquote footer {
 #directions h2 {
     margin-bottom: 20px;
 }
-/* Ensure the body content does not overlap with the vertical drape */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 body {
     margin: 0;
     padding-top: 80px;
     background-color: #e6f0e6; /* Fallback background color */
-    overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative; /* Required for pseudo-element positioning */
     --banner-width: 50vw;
     --banner-opacity: 1;
@@ -362,16 +381,219 @@ header .swiper-container {
 footer {
     position: relative;
     z-index: 2; /* Ensure footer is above banners */
-    background: url('images/navbar-banner.png') repeat; /* Floral banner background for the footer */
-    background-size: cover;
+    background-color: #f8f8f8; /* Off-white background */
     padding: 20px 0; /* Add some padding for better spacing */
     text-align: center;
     color: #2f4f4f; /* Dark green text */
     font-family: 'Georgia', serif;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
 }
 
 footer p {
     margin: 0;
     color: #2f4f4f; /* Dark green text */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+/* New banner styles */
+.banner {
+    height: 100vh;
+    width: var(--banner-width, 50vw); /* Default width */
+    opacity: var(--banner-opacity, 1); /* Default opacity */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    will-change: transform;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#banner1 {
+    background-image: url('images/vertical-banner-right.png');
+}
+
+#banner2 {
+    background-image: url('images/vertical-banner-left.png');
+}
+/* Timeline styles */
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #2f4f4f; /* Dark green line */
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 4px;
+}
+
+.timeline > li {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.timeline-panel {
+    position: relative;
+    width: 45%;
+    background: #f8f8f8; /* Off-white */
+    border: 1px solid #d4d4d4;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-left: 55%;
+    transform-origin: center;
+}
+
+.timeline-panel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-inverted .timeline-panel {
+    margin-left: 0;
+    margin-right: 55%;
+}
+
+.timeline-badge {
+    background-color: #2f4f4f;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-title {
+    margin-top: 0;
+    color: #2f4f4f; /* Dark green */
+    font-family: 'Georgia', serif;
+}
+
+.timeline-body > p, .timeline-body > ul {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .timeline:before {
+        left: 20px;
+    }
+
+    .timeline > li > .timeline-panel {
+        width: calc(100% - 40px);
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .timeline-inverted .timeline-panel {
+        margin-right: 0;
+    }
+
+    .timeline-badge {
+        left: 20px;
+        margin-left: 0;
+    }
+}
+
+/* Countdown timer styles */
+#countdown {
+    background-image: url('images/roses.png'); /* Add the celebratory background GIF */
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(230, 240, 230, 0.6); /* Sage green with opacity */
+    background-blend-mode: overlay;
+    padding: 50px 0;
+    color: #2f4f4f; /* Dark green */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Center the section */
+    max-width: calc(100% - 400px); /* Prevent overlap with banners */
+}
+
+#countdown h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2f4f4f; /* Dark green */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+}
+
+.time-box {
+    margin: 0 15px;
+    text-align: center;
+    position: relative;
+}
+
+.animated-time {
+    display: block;
+    font-size: 4rem;
+    color: #4f8f8f; /* Highlight color */
+    animation: bounceIn 2s ease-in-out infinite alternate;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.spark-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ffd700; /* Gold color */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fly 1s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50px, 50px);
+        opacity: 0;
+    }
 }
