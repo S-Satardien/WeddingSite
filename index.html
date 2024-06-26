@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#rsvp">RSVP</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#quotes">Quotes</a>
+                <a class="nav-link" href="#programme">Programme</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
@@ -42,7 +42,7 @@
 </nav>
 
 <header class="main-content">
-    <div class="swiper-container">
+   <!-- <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="images/slide1.jpg" alt="Slide 1">
@@ -54,13 +54,43 @@
                 <img src="images/slide3.jpg" alt="Slide 3">
             </div>
             <!-- Add more slides as needed -->
-        </div>
+    <!--    </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+    <!--    <div class="swiper-pagination"></div>
         <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
+     <!--   <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+    </div>  -->
+	
+	<section id="countdown" class="countdown text-center mb-5">
+    <h2 class="text-center mb-4">Our Wedding Countdown</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="countdown-timer" class="animated-countdown">
+                    <div class="time-box">
+                        <span id="days" class="animated-time"></span>
+                        <p>Days</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours" class="animated-time"></span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes" class="animated-time"></span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds" class="animated-time"></span>
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+
 </header>
 
 <main class="main-content container my-5">
@@ -111,24 +141,76 @@
         </div>
     </section>
 
-    <section id="quotes" class="quotes text-center mb-5">
-        <h2 class="text-center mb-4">Quotes</h2>
+ <section id="programme" class="programme text-center mb-5">
+    <h2 class="text-center mb-4">Programme of the Day</h2>
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <blockquote class="blockquote">
-                    <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
-                    <footer class="blockquote-footer">Saleem</footer>
-                </blockquote>
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Welcome and Arrival</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 10:00 AM</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Guests arrive and are welcomed with refreshments. Please take your seats by 10:30 AM.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Ceremony</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11:00 AM</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>The wedding ceremony begins. Witness the beautiful vows and exchange of rings.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Reception</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1:00 PM</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Join us for a delightful lunch and reception. Enjoy speeches, toasts, and entertainment.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Evening Celebrations</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 6:00 PM</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Dance the night away with music, food, and drinks. Enjoy the festive atmosphere until midnight.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-4 mb-4">
-                <img src="path/to/placeholder.jpg" alt="Saleem and Rabia" class="img-fluid rounded-circle animate__animated animate__zoomIn" style="width: 200px;">
-            </div>
-            <div class="col-md-4 mb-4">
-                <blockquote class="blockquote">
-                    <p class="mb-0">It’s not too often that you find someone who can finish your sentences, let alone correct your improper use of a Dumb and Dumber quote.</p>
-                    <footer class="blockquote-footer">Rabia</footer>
-                </blockquote>
-            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+	
+	 <!-- New Directions Section -->
+    <section id="directions">
+        <h2>Directions to the Venue</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d52932.05008083607!2d18.415058639472726!3d-33.98603138429793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-33.9810134!2d18.4869558!4m5!1s0x1dcc42a1c6bbe8ed%3A0x39b009ef49e24770!2ssouthern%20lights%20country%20house%20google%20maps!3m2!1d-33.999601!2d18.431393!5e0!3m2!1sen!2sza!4v1719137273672!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -138,13 +220,7 @@
         <p>Email: <a href="mailto:courtneyjames3009@gmail.com">courtneyjames3009@gmail.com</a></p>
     </section>
 	
-    <!-- New Directions Section -->
-    <section id="directions">
-        <h2>Directions to the Venue</h2>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d52932.05008083607!2d18.415058639472726!3d-33.98603138429793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-33.9810134!2d18.4869558!4m5!1s0x1dcc42a1c6bbe8ed%3A0x39b009ef49e24770!2ssouthern%20lights%20country%20house%20google%20maps!3m2!1d-33.999601!2d18.431393!5e0!3m2!1sen!2sza!4v1719137273672!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+   
 	
 	
 </main>
