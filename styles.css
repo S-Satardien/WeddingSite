@@ -43110,3 +43110,11 @@ label {
 .form-row > div {
     padding: 0 10px;
 }
+
+.was-validated .invalid-feedback {
+    display: block;
+}
+
+.invalid-feedback {
+    display: none;
+}
