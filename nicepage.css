@@ -42920,11 +42920,11 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 114px;
+  min-height: 183px;
 }
 
 .u-header .u-menu-1 {
-  margin: 38px auto 11px;
+  margin: 80px 92px 0 auto;
 }
 
 .u-header .u-nav-1 {
@@ -42935,6 +42935,17 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-nav-2 {
   font-size: 1.25rem;
+}
+
+.u-header .u-image-1 {
+  width: 160px;
+  height: 160px;
+  margin: -102px 936px 1px 44px;
+}
+
+.u-header .u-logo-image-1 {
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1199px) {
    .u-header {
@@ -42948,17 +42959,34 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-nav-1 {
     letter-spacing: normal;
   }
+
+  .u-header .u-image-1 {
+    margin-top: -102px;
+    margin-right: 772px;
+  }
 }
-
-
-
+@media (max-width: 991px) {
+  .u-header .u-image-1 {
+    margin-right: 591px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-image-1 {
+    margin-right: 443px;
+  }
+}
+@media (max-width: 575px) {
+  .u-header .u-image-1 {
+    margin-right: 279px;
+  }
+}
 .u-footer .u-sheet-1 {
   min-height: 299px;
 }
 
 .u-footer .u-image-1 {
-  width: 133px;
-  height: 133px;
+  width: 239px;
+  height: 239px;
   margin: 27px auto 0;
 }
 
@@ -42978,6 +43006,11 @@ a.u-link.u-text-hover-grey-90:hover {
   margin: 30px auto 10px;
 }
 @media (max-width: 1199px) {
+  .u-footer .u-image-1 {
+    width: 239px;
+    height: 239px;
+  }
+
   .u-footer .u-line-1 {
     margin-right: initial;
     margin-left: initial;
@@ -43007,106 +43040,3 @@ a.u-link.u-text-hover-grey-90:hover {
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
  /*end-variables base-font-size*/
- 
- .rsvp {
-    background-color: #f9f9f9; /* Light background for contrast */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-	font-family: Lobster,display;
-}
-
-.rsvp {
-    background-color: #ffffff; /* Pure white background for minimalism */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-	font-family: Lobster,display;
-}
-
-.rsvp h2 {
-    font-family: Lobster,display;
-    color: #4f8f8f; /* Sage green */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.form-container {
-    margin-top: 20px;
-}
-
-.form-control {
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    padding: 8px;
-    font-size: 1rem;
-    color: #333333;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: #4f8f8f; /* Sage green */
-    box-shadow: 0 0 5px rgba(79, 143, 143, 0.1);
-    outline: none;
-}
-
-.btn-primary {
-    background-color: #4f8f8f; /* Sage green */
-    border-color: #4f8f8f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #3f7f7f; /* Darker sage green */
-    box-shadow: 0 4px 8px rgba(79, 143, 143, 0.2);
-}
-
-.invalid-feedback {
-    font-size: 0.9rem;
-    color: #d9534f; /* Bootstrap default error color */
-}
-
-::placeholder {
-    color: #c4c4c4; /* Light gray placeholder text */
-    opacity: 1;
-}
-
-/* Add transitions and focus effects for a modern look */
-input[type="text"]:focus, select:focus {
-    border-color: #4f8f8f;
-    box-shadow: 0 0 5px rgba(79, 143, 143, 0.1);
-    outline: none;
-}
-
-/* Minimalist label styles */
-label {
-	font-family: Lobster,display;
-    font-size: 1rem;
-    color: #666666;
-    margin-bottom: 5px;
-    display: block;
-    text-align: left;
-}
-
-/* Form row and group styling for alignment */
-.form-row, .form-group {
-    margin-bottom: 20px;
-}
-
-/* Form row inside padding */
-.form-row > div {
-    padding: 0 10px;
-}
